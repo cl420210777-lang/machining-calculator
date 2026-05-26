@@ -1,10 +1,10 @@
-工作流程:
-  android-构建:
-    姓名: 打包安卓APP
-    脚本:
-      - 姓名: 打包
-        脚本: |
+workflows:
+  android-build:
+    name: 打包安卓APP
+    scripts:
+      - name: 打包
+        script: |
           chmod +x gradlew
           ./gradlew assembleRelease
-    文物:
-      - 应用程序/构建/输出/apk/release/*.apk
+    artifacts:
+      - app/build/outputs/apk/release/*.apk

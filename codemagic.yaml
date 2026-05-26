@@ -1,6 +1,13 @@
 workflows:
-  android:
+  android-build:
+    name: 打包安卓APP
+    environment:
+      android:
+        gradle: 8.0
     scripts:
-      - ./gradlew assembleRelease
+      - name: 赋予权限并打包
+        script: |
+          chmod +x gradlew
+          ./gradlew assembleRelease
     artifacts:
       - app/build/outputs/apk/release/*.apk

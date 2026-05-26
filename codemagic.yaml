@@ -1,11 +1,8 @@
 workflows:
   android-build:
     name: 打包安卓APP
-    environment:
-      android:
-        gradle: 8.0
     scripts:
-      - name: 赋予权限并打包
+      - name: 打包
         script: |
           chmod +x gradlew
           ./gradlew assembleRelease

@@ -1,0 +1,6 @@
+workflows:
+  android:
+    scripts:
+      - ./gradlew assembleRelease
+    artifacts:
+      - app/build/outputs/apk/release/*.apk
